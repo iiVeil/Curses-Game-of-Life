@@ -107,5 +107,9 @@ class Board:
         return self.grid[y][x]
 
     def reset(self):
+        """
+        ? Description:
+        * * Resets the board to an empty state
+        """
         self.grid = [[Cell((x, y)) for x in range(self.width)]
                      for y in range(self.height)]
