@@ -1,4 +1,5 @@
 from cell import Cell
+import time
 
 
 class Board:
@@ -6,10 +7,9 @@ class Board:
         self.window = stdscr
         self.height, self.width = stdscr.getmaxyx()
         self.height -= 2
-        self.width -= 25
         self.grid = [[Cell((x, y)) for x in range(self.width)]
                      for y in range(self.height)]
-        self.states = ["▁", "█"]
+        self.states = ["□", "█"]
 
     def draw(self) -> None:
         """
@@ -81,10 +81,10 @@ class Board:
     def on_grid(self, cell: tuple) -> bool:
         """
         ? Description:
-        * * Returns true or false if a given cell is on the grid
+        * * Returns true or false if a given pair is on the grid
 
         ? Args:
-        * * cell (Cell): The position to check
+        * * cell (Cell): The pair to check
 
         ? Returns:
         * * bool: True if on the grid, False if off the grid
