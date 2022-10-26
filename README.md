@@ -5,4 +5,4 @@ This only runs on linux as windows doesnt have mouse support for their terminal 
 
 Runs fine on WSL
 
-No dependencies
+No dependencies other than curses
