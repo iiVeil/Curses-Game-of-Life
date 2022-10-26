@@ -4,19 +4,19 @@ from board import Board
 
 def main(stdscr):
     curses.mousemask(curses.BUTTON1_CLICKED)
-    board = Board(stdscr)
+    grid = Board(stdscr)
     while True:
         curses.curs_set(0)
-        board.draw()
+        grid.draw()
         event = stdscr.getch()
         if event == curses.KEY_MOUSE:
             _, mx, my, _, _ = curses.getmouse()
-            if board.on_grid((mx, my)):
-                board.get_cell((mx, my)).swap()
+            if grid.on_grid((mx, my)):
+                grid.get_cell((mx, my)).swap()
         elif event == ord("i"):
-            board.iterate()
+            grid.iterate()
         elif event == ord("r"):
-            board.reset()
+            grid.reset()
 
 
 if __name__ == "__main__":
